@@ -43,11 +43,11 @@
   </body>
   <script>
     function punch() {
-      document.getElementById('highscore').innerHTML = localStorage.highscore
+      document.getElementById('highscore').innerHTML = Number(localStorage.highscore)
       document.getElementById('score').innerHTML = Number(document.getElementById('score').innerHTML) + 1
       if (document.getElementById('score').innerHTML > localStorage.highscore) {
         localStorage.highscore = Number(document.getElementById('score').innerHTML)
-        document.getElementById('highscore').innerHTML = localStorage.highscore
+        document.getElementById('highscore').innerHTML = Number(localStorage.highscore)
       }
     }
   </script>
