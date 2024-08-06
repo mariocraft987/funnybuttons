@@ -36,8 +36,19 @@
     <br/>
     <br/>
     <div style="text-align: center;">
-      <button class="Button" onclick="document.getElementById('score').innerHTML = Number(document.getElementById('score').innerHTML) + 1">Punch the dummy</button>
+      <button class="Button" onclick="punch()">Punch the dummy</button>
       <p>Score: <div id="score">0</div></p>
+      <p>Highscore: <div id="highscore">0</div></p>
     </div>
   </body>
+  <script>
+    function punch() {
+      document.getElementById('highscore').innerHTML = localStorage.highscore
+      document.getElementById('score').innerHTML = Number(document.getElementById('score').innerHTML) + 1
+      if (document.getElementById('score').innerHTML > localStorage.highscore) {
+        localStorage.highscore = Number(document.getElementById('score').innerHTML)
+        document.getElementById('highscore').innerHTML = localStorage.highscore
+      }
+    }
+  </script>
 </html>
